@@ -18,4 +18,5 @@ export interface Service {
     name: string;
     description: string;
     icon: React.ReactNode;
+    imageUrl?: string;
 }
