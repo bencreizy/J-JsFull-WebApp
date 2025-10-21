@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
 
     const handleShare = async () => {
         const shareData = {
-            title: "J&J Automotive-Truck Repair",
+            title: "J&J's Automotive-Truck Repair",
             text: `Find us at: ${address}`,
             url: googleMapsUrl,
         };
@@ -31,18 +31,18 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="bg-black border-t border-white/10 shadow-inner shadow-white/10 pt-16 pb-8">
+        <footer className="border-t border-white/10 shadow-inner shadow-white/10 pt-16 pb-8">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Contact Info */}
                     <div className="md:col-span-1">
-                        <h3 className="text-2xl font-bold orbitron text-white mb-4">J&J Automotive</h3>
+                        <h3 className="text-2xl font-bold orbitron text-white mb-4">J&J's Automotive</h3>
                         <p className="text-gray-400 mb-2">{address.split(',')[0]}<br/>{address.split(',').slice(1).join(',')}</p>
                         <p className="text-gray-400 mb-2">
                             <span className="font-semibold text-gray-300">Phone:</span> <a href="tel:8554608778" className="hover:text-cyan-300 transition-colors">(855) 460-8778</a>
                         </p>
                         <p className="text-gray-400">
-                            <span className="font-semibold text-gray-300">Email:</span> <a href="mailto:bencreizy@gmail.com" className="hover:text-cyan-300 transition-colors">bencreizy@gmail.com</a>
+                            <span className="font-semibold text-gray-300">Email:</span> <a href="mailto:jcichon@jjautotruckrepair.com" className="hover:text-cyan-300 transition-colors">jcichon@jjautotruckrepair.com</a>
                         </p>
                         <div className="flex space-x-4 mt-6">
                             <a href="#" className="text-slate-500 hover:text-white transition-colors"><FacebookIcon /></a>
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                     {/* Map */}
                     <div className="md:col-span-2">
                          <h3 className="text-xl font-bold orbitron text-white mb-4">Our Location</h3>
-                        <div className="bg-[#2b2b2b] border border-cyan-500 rounded-lg h-64 md:h-80 overflow-hidden shadow-[0_0_8px_rgba(255,255,255,0.4)]">
+                        <div className="bg-[#2b2b2b] border border-cyan-500 rounded-lg h-64 md:h-80 overflow-hidden shadow-[0_0_8px_rgba(255,255,255,0.4)] will-change-transform translate-z-0">
                            <iframe
                                 src={mapEmbedUrl}
                                 width="100%"
@@ -67,12 +67,12 @@ const Footer: React.FC = () => {
                            ></iframe>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                             <a href={directionsUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-[#3a3a3a] text-white font-bold orbitron uppercase tracking-widest py-3 px-6 rounded-sm border-2 border-cyan-400 shadow-[0_0_8px_rgba(255,255,255,0.4)] hover:bg-[#2b2b2b] hover:shadow-lg hover:shadow-[0_0_20px_#FFFFFF] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                             <a href={directionsUrl} target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-[#3a3a3a] text-white font-bold orbitron uppercase tracking-widest py-3 px-6 rounded-sm border-2 border-cyan-400 shadow-[0_0_8px_rgba(255,255,255,0.4)] hover:bg-[#2b2b2b] hover:shadow-lg hover:shadow-[0_0_20px_#FFFFFF] transition-all duration-300 transform hover:-translate-y-1 will-change-transform translate-z-0 flex items-center justify-center gap-2">
                                 <DirectionsIcon className="w-5 h-5" />
                                 Get Directions
                             </a>
                             {canShare && (
-                                <button onClick={handleShare} className="flex-1 text-center bg-[#3a3a3a] text-white font-bold orbitron uppercase tracking-widest py-3 px-6 rounded-sm border-2 border-cyan-400 shadow-[0_0_8px_rgba(255,255,255,0.4)] hover:bg-[#2b2b2b] hover:shadow-[0_0_20px_#FFFFFF] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                <button onClick={handleShare} className="flex-1 text-center bg-[#3a3a3a] text-white font-bold orbitron uppercase tracking-widest py-3 px-6 rounded-sm border-2 border-cyan-400 shadow-[0_0_8px_rgba(255,255,255,0.4)] hover:bg-[#2b2b2b] hover:shadow-[0_0_20px_#FFFFFF] transition-all duration-300 transform hover:-translate-y-1 will-change-transform translate-z-0 flex items-center justify-center gap-2">
                                     <ShareIcon className="w-5 h-5" />
                                     Share Location
                                 </button>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="mt-12 border-t border-gray-800 pt-8 text-center text-slate-500">
-                    <p>&copy; {new Date().getFullYear()} J & J Automotive-Truck Repair. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} J & J's Automotive-Truck Repair. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

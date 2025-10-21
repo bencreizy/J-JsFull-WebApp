@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Service list copied from RepairServices.tsx for populating the dropdown
 const servicesList = [
@@ -15,7 +14,6 @@ const servicesList = [
 ];
 
 const Contact: React.FC = () => {
-    const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -68,7 +66,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section ref={ref} className={`py-20 md:py-24 bg-black scroll-reveal ${isVisible ? 'visible' : ''}`}>
+        <section className="py-20 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold orbitron text-slate-100">Get In Touch</h2>
@@ -78,7 +76,7 @@ const Contact: React.FC = () => {
                     <div className="w-24 h-1 bg-cyan-400 mx-auto mt-6"></div>
                 </div>
 
-                <div className="max-w-4xl mx-auto bg-[#2b2b2b] border border-cyan-500 rounded-lg p-8 shadow-[0_0_12px_rgba(255,255,255,0.5)]">
+                <div className="max-w-4xl mx-auto bg-[#2b2b2b] border border-cyan-500 rounded-lg p-8 shadow-[0_0_12px_rgba(255,255,255,0.5)] will-change-transform translate-z-0">
                     {submissionStatus === 'success' ? (
                         <div className="text-center py-12">
                             <svg className="w-16 h-16 mx-auto text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -90,21 +88,21 @@ const Contact: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-400 orbitron uppercase tracking-wider mb-2">Full Name</label>
-                                    <input type="text" name="name" id="name" required value={formData.name} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all" />
+                                    <input type="text" name="name" id="name" required value={formData.name} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all translate-z-0" />
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-gray-400 orbitron uppercase tracking-wider mb-2">Email Address</label>
-                                    <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all" />
+                                    <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all translate-z-0" />
                                 </div>
                             </div>
                              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-gray-400 orbitron uppercase tracking-wider mb-2">Phone Number</label>
-                                    <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all" />
+                                    <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all translate-z-0" />
                                 </div>
                                 <div>
                                     <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-400 orbitron uppercase tracking-wider mb-2">Inquiry Type</label>
-                                    <select name="inquiryType" id="inquiryType" value={formData.inquiryType} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all">
+                                    <select name="inquiryType" id="inquiryType" value={formData.inquiryType} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all translate-z-0">
                                         <option>General Inquiry / Quote Request</option>
                                         <option>Schedule a Call Back</option>
                                     </select>
@@ -112,7 +110,7 @@ const Contact: React.FC = () => {
                             </div>
                              <div>
                                 <label htmlFor="service" className="block text-sm font-medium text-gray-400 orbitron uppercase tracking-wider mb-2">Service of Interest</label>
-                                <select name="service" id="service" value={formData.service} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all">
+                                <select name="service" id="service" value={formData.service} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all translate-z-0">
                                     {servicesList.map(service => (
                                         <option key={service} value={service}>{service}</option>
                                     ))}
@@ -120,7 +118,7 @@ const Contact: React.FC = () => {
                             </div>
                              <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-400 orbitron uppercase tracking-wider mb-2">Message</label>
-                                <textarea name="message" id="message" rows={4} required value={formData.message} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all" placeholder="Tell us more about your needs..."></textarea>
+                                <textarea name="message" id="message" rows={4} required value={formData.message} onChange={handleChange} className="w-full bg-[#2b2b2b] border border-white/20 rounded-md py-2 px-3 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all translate-z-0" placeholder="Tell us more about your needs..."></textarea>
                             </div>
                              <div className="text-center">
                                 {submissionStatus === 'error' && <p className="text-cyan-400 text-center mb-4">Oops! Something went wrong. Please try again.</p>}

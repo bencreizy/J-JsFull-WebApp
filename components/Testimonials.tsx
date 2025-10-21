@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Testimonial } from '../types';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const testimonials: Testimonial[] = [
     {
@@ -27,10 +26,9 @@ const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 
-const TestimonialCard: React.FC<{ testimonial: Testimonial, delay: number }> = ({ testimonial, delay }) => {
-    const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
+const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
     return (
-        <div ref={ref} className={`bg-[#2b2b2b] p-8 rounded-lg border border-cyan-500 shadow-[0_0_8px_rgba(255,255,255,0.4)] scroll-reveal transition-all duration-300 hover:bg-[#3a3a3a] hover:shadow-[0_0_20px_rgba(255,255,255,0.75)] ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: `${delay}ms` }}>
+        <div className="bg-[#2b2b2b] p-8 rounded-lg border border-cyan-500 shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all duration-300 hover:bg-[#3a3a3a] hover:shadow-[0_0_20px_rgba(255,255,255,0.75)] will-change-transform translate-z-0">
             <div className="flex text-yellow-400 mb-4">
                 {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-5 h-5" />)}
             </div>
@@ -44,10 +42,9 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial, delay: number }> = (
 };
 
 const Testimonials: React.FC = () => {
-    const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
     return (
-        <section ref={ref} className={`py-20 md:py-24 bg-black scroll-reveal ${isVisible ? 'visible' : ''}`}>
+        <section className="py-20 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold orbitron text-slate-100">Trusted by Drivers</h2>
@@ -56,7 +53,7 @@ const Testimonials: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={index} testimonial={testimonial} delay={index * 150} />
+                        <TestimonialCard key={index} testimonial={testimonial} />
                     ))}
                 </div>
             </div>

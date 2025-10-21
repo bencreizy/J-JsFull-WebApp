@@ -32,7 +32,11 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0">
                         <a href="#home" className="text-white flex items-center group">
-                           <span className="text-3xl font-bold orbitron text-white group-hover:text-cyan-400 transition-colors">J&J</span>
+                           <img
+                                src="https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1761056326310.png"
+                                alt="J&J Automotive Logo"
+                                className="h-28 w-auto"
+                            />
                            <span className="ml-3 text-lg font-semibold orbitron text-slate-300 group-hover:text-cyan-300 transition-colors hidden sm:block">Automotive-Truck Repair</span>
                         </a>
                     </div>
