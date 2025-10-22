@@ -14,7 +14,7 @@ const App: React.FC = () => {
   return (
     <div
       style={{
-        fontFamily: "'Orbitron', sans-serif",
+        fontFamily: "Orbitron, sans-serif",
         color: "#e5e5e5",
         backgroundColor: "#000",
         overflowX: "hidden",
