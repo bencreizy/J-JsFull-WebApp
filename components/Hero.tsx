@@ -18,9 +18,9 @@ const Hero: React.FC<HeroProps> = ({ contactRef }) => {
 
             <div className="relative z-20 container mx-auto px-4">
                 <img 
-                    src="https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/Logopit_1761009043511.png" 
+                    src="https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1761057621578.png" 
                     alt="J & J Automotive Logo" 
-                    className="mx-auto mt-16 max-w-[90%] h-auto float-logo-animation scale-[1.15] will-change-transform translate-z-0"
+                    className="mx-auto mt-8 max-w-[85%] md:max-w-[65%] h-auto float-logo-animation scale-[1.15] will-change-transform translate-z-0"
                 />
                 {/* New Request Service button added here */}
                 <div className="mt-8">
