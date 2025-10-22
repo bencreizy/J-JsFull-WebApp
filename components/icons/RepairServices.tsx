@@ -1,76 +1,76 @@
 import React from 'react';
 import type { Service } from '../types';
-import { 
-    ToolboxIcon, 
-    GeneralRepairIcon, 
-    EngineIcon, 
-    BatteryIcon, 
-    TransmissionIcon, 
-    BrakeSuspensionIcon, 
-    EmissionsIcon, 
-    FluidsIcon, 
-    PaintBodyIcon 
-} from './icons/ServiceIcons';
+import {
+    ToolboxIcon,
+    GeneralRepairIcon,
+    EngineIcon,
+    BatteryIcon,
+    TransmissionIcon,
+    BrakeSuspensionIcon,
+    EmissionsIcon,
+    FluidsIcon,
+    PaintBodyIcon
+} from './ServiceIcons';
 
 const services: Service[] = [
-    { 
-        name: 'Main Service Hub', 
-        description: 'Our full-service toolbox for comprehensive shop and hub services.', 
+    {
+        name: 'Main Service Hub',
+        description: 'Our full-service toolbox for comprehensive shop and hub services.',
         icon: <ToolboxIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760815108794.png?v=1.0.3'
     },
-    { 
-        name: 'General Repair & Diagnostics', 
-        description: 'Expert diagnostics and general repairs to address any issue, big or small.', 
+    {
+        name: 'General Repair & Diagnostics',
+        description: 'Expert diagnostics and general repairs to address any issue, big or small.',
         icon: <GeneralRepairIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760916745796.png?v=1.0.3'
     },
-    { 
-        name: 'Engine Overhaul & Performance', 
-        description: 'Complete engine rebuilds, performance tuning, and heavy-duty overhauls.', 
+    {
+        name: 'Engine Overhaul & Performance',
+        description: 'Complete engine rebuilds, performance tuning, and heavy-duty overhauls.',
         icon: <EngineIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760918206712.png?v=1.0.3'
     },
-    { 
-        name: 'Electrical Systems', 
-        description: 'Advanced troubleshooting and repair of complex vehicle electrical systems.', 
+    {
+        name: 'Electrical Systems',
+        description: 'Advanced troubleshooting and repair of complex vehicle electrical systems.',
         icon: <BatteryIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760916798842.png?v=1.0.3'
     },
-    { 
-        name: 'Powertrain / Drivetrain', 
-        description: 'Specialized service for transmissions, differentials, and drivetrain components.', 
+    {
+        name: 'Powertrain / Drivetrain',
+        description: 'Specialized service for transmissions, differentials, and drivetrain components.',
         icon: <TransmissionIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760917628776.png?v=1.0.3'
     },
-    { 
-        name: 'Brakes, Suspension & Steering', 
-        description: 'Ensuring your safety and ride comfort with expert brake and chassis work.', 
+    {
+        name: 'Brakes, Suspension & Steering',
+        description: 'Ensuring your safety and ride comfort with expert brake and chassis work.',
         icon: <BrakeSuspensionIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760916833650.png?v=1.0.3'
     },
-    { 
-        name: 'Emissions, Muffler & Exhaust', 
-        description: 'Servicing exhaust systems and ensuring your vehicle meets emissions standards.', 
+    {
+        name: 'Emissions, Muffler & Exhaust',
+        description: 'Servicing exhaust systems and ensuring your vehicle meets emissions standards.',
         icon: <EmissionsIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760916775897.png?v=1.0.3'
     },
-    { 
-        name: 'Fluids & Preventive Maintenance', 
-        description: 'Oil changes and fluid services to keep your vehicle running reliably.', 
+    {
+        name: 'Fluids & Preventive Maintenance',
+        description: 'Oil changes and fluid services to keep your vehicle running reliably.',
         icon: <FluidsIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760918366738.png?v=1.0.3'
     },
-    { 
-        name: 'Paint, Body & Collision Repair', 
-        description: 'Restoring your vehicle to pre-accident condition with flawless bodywork.', 
+    {
+        name: 'Paint, Body & Collision Repair',
+        description: 'Restoring your vehicle to pre-accident condition with flawless bodywork.',
         icon: <PaintBodyIcon />,
         imageUrl: 'https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1760916622128.png?v=1.0.3'
     },
 ];
 
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
-    
+
     // Conditionally apply rotation for the specific service icon
     const isEmissionsCard = service.name === 'Emissions, Muffler & Exhaust';
     // Updated image classes for a 3D float effect on hover
@@ -80,9 +80,9 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
          <div className="group [perspective:1000px] bg-[#2b2b2b] border border-cyan-500 rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:bg-[#3a3a3a] hover:shadow-[0_0_20px_rgba(255,255,255,0.75)] shadow-[0_0_8px_rgba(255,255,255,0.4)] flex flex-col justify-between min-h-72 will-change-transform translate-z-0">
             {service.imageUrl ? (
                 <div className="flex justify-center items-center h-36">
-                    <img 
-                        src={service.imageUrl} 
-                        alt={service.name} 
+                    <img
+                        src={service.imageUrl}
+                        alt={service.name}
                         className={imageClasses}
                     />
                 </div>

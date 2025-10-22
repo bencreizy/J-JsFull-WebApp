@@ -26,19 +26,28 @@ const Header: React.FC<HeaderProps> = ({ navLinks }) => {
         setIsOpen(false);
     };
 
+    const scrollToHome = () => {
+        const homeLink = navLinks.find(link => link.name === 'Home');
+        if (homeLink?.ref.current) {
+            homeLink.ref.current.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        setIsOpen(false);
+    };
+
     return (
         <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-lg shadow-lg shadow-[0_0_8px_rgba(255,255,255,0.4)]' : 'bg-transparent'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0">
-                        <a href="#home" className="text-white flex items-center group">
+                        <button onClick={scrollToHome} className="focus:outline-none">
                            <img
-                                src="https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/1761056326310.png"
-                                alt="J&J Automotive Logo"
-                                className="h-28 w-auto"
-                            />
-                           <span className="ml-3 text-lg font-semibold orbitron text-slate-300 group-hover:text-cyan-300 transition-colors hidden sm:block">Automotive-Truck Repair</span>
-                        </a>
+                                src="https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/Logopit_1761075595402.png"
+                                alt="J & J's Automotive-Truck Repair Logo"
+                                className="h-auto max-h-[120px] w-auto will-change-transform translate-z-0"
+                           />
+                        </button>
                     </div>
                     <nav className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">

@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="J & J's Automotive Truck Repair" />
-    <title>J & J's Automotive Truck Repair</title>
+    <title>J & J's Automotive-Truck Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #e5e5e5;
+            overflow-x: hidden;
+            background-color: transparent; /* Ensure body is transparent */
+        }
+        #animated-background {
+          background: url("https://raw.githubusercontent.com/bencreizy/J-JsFull-WebApp/main/assets/Logopit_1761000619938.png") repeat center center fixed;
+          background-size: 120% 120%;
+          opacity: 1 !important;
+          filter: none !important;
+          z-index: -1;
+          position: fixed; /* Fix background to viewport */
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        #root {
+            background-color: transparent; /* Ensure root is transparent */
+        }
+        .orbitron { font-family: 'Orbitron', sans-serif; }
 
-    <!-- Optional: your logo or favicon -->
-    <link rel="icon" type="image/png" href="/assets/logo.png" />
+        .float-logo-animation {
+            animation: float-logo 6s ease-in-out infinite;
+        }
 
-    <!-- Font for consistent styling -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+        @keyframes float-logo {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
 
-  <body style="margin: 0; background-color: #000;">
+        /* Fix for 3D transform glitches */
+        .preserve-3d-fix {
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        /* Performance enhancements for animations */
+        .will-change-transform {
+            will-change: transform;
+        }
+        .translate-z-0 {
+            transform: translateZ(0);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="animated-background"></div>
     <div id="root"></div>
-
-    <!-- React entry point -->
     <script type="module" src="/index.tsx"></script>
-  </body>
+</body>
 </html>
